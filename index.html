@@ -572,6 +572,17 @@ document.querySelectorAll('.day-tab').forEach(function (tab) {
   });
 });
 
+// ----- forward campaign params (utm_*) to RegFox registration links -----
+(function () {
+  var params = new URLSearchParams(location.search);
+  var utm = [];
+  params.forEach(function (v, k) { if (k.indexOf('utm_') === 0) utm.push(k + '=' + encodeURIComponent(v)); });
+  if (!utm.length) return;
+  document.querySelectorAll('a[href*="regfox.com"]').forEach(function (a) {
+    a.href += (a.href.indexOf('?') > -1 ? '&' : '?') + utm.join('&');
+  });
+})();
+
 // ----- reveal on scroll (fail-safe) -----
 // Content starts VISIBLE. Only after the observer proves it delivers
 // callbacks (first entry batch) do we opt in to the hidden/animated
