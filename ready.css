@@ -986,3 +986,16 @@ html[data-hero="poster"] .hero-title { font-size: clamp(46px, 9.5vw, 116px); }
     transform: none;
   }
 }
+
+/* ---------- per-weekend session speakers ---------- */
+.sched-speakers {
+  margin: 10px 0 0;
+  font-family: var(--font-cond);
+  font-weight: 600;
+  font-size: 16.5px;
+  letter-spacing: 0.03em;
+  color: var(--ink);
+}
+.sched-speakers .sched-flag { margin-left: 0; margin-right: 7px; }
+.sched-speakers .sched-flag + * { margin-left: 0; }
+.sched-speakers .wk2 { margin-left: 18px; }
