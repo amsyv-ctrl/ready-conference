@@ -784,6 +784,53 @@ html[data-hero="poster"] .hero-title { font-size: clamp(46px, 9.5vw, 116px); }
   border-radius: 999px;
   margin-bottom: 18px;
 }
+.breakouts { border-style: solid; }
+.bo-grid {
+  display: grid;
+  gap: 22px;
+  margin-top: 32px;
+  text-align: left;
+}
+.bo-card {
+  background: var(--bg-2);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 26px 24px;
+}
+.bo-card.bo-main {
+  border-color: color-mix(in srgb, var(--accent), transparent 45%);
+  background:
+    linear-gradient(180deg, color-mix(in srgb, var(--accent), transparent 92%), transparent 60%),
+    var(--bg-2);
+}
+.bo-tag {
+  display: inline-block;
+  font-family: var(--font-cond);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 12px;
+  color: var(--accent);
+  margin-bottom: 10px;
+}
+.bo-card h4 {
+  margin: 0;
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  font-size: 21px;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+}
+.breakouts .bo-card p {
+  margin: 12px 0 0;
+  max-width: none;
+  font-size: 15px;
+  line-height: 1.65;
+}
+@media (min-width: 900px) {
+  .bo-grid { grid-template-columns: 1fr 1fr; }
+  .bo-card.bo-main { grid-column: 1 / -1; }
+}
 
 /* ---------- meals & lodging ---------- */
 .ml-grid {
